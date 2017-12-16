@@ -12,4 +12,3 @@ if (env === 'debug') {
   };
 }
 
-export default conf;

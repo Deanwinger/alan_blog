@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/7.0.0/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <div class="wrap wrap-sm">
@@ -15,28 +17,79 @@
         </div>
         <div class="form">
             <form>
-                <div class="input-wrap">
+                <div class="input-wrap" >
                     <label>姓名</label>
-                    <input type="text" class="input-control">
+                    <input type="text" class="input-control" id="name">
                     <div class="input-error">姓名格式有误</div>
                 </div>
                 <div class="input-wrap">
                     <label>邮箱</label>
-                    <input type="text" class="input-control">
+                    <input type="text" class="input-control" id="email">
                     <div class="input-error">邮箱格式有误</div>
                 </div>
                 <div class="input-wrap">
                     <label>留言</label>
-                    <textarea class="input-control"></textarea>  
+                    <textarea class="input-control" id="message"></textarea>  
                     <div class="input-error">留言格式有误</div>
                 </div>
                 <div class="input-wrap">
-                    <button>submit</button>
+                    <button id='submit'>submit</button>
                 </div>
             </form>
         </div>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
-    <script src="js/main.js"></script>
+
+    <script class="tes-request">
+        // var request = new XMLHttpRequest();
+
+        // // 发送请求:
+        // request.open('GET', 'http://127.0.0.1:5000/');
+        // request.send();
+
+        // var request = $.get('http://127.0.0.1:5000/', {
+        // });
+
+        // onclick="send_message()"
+        var send_message = function() {
+            // var name = document.getElementById("name").value;
+            // var email = document.getElementById("email").value;
+            // var intro = document.getElementById("message").value;
+
+            // var name = $("name").value;
+            // var email = $("email").value;
+            // var intro = $("message").value;
+            // console.log("===========================================================")
+            // console.log(name, email, intro)
+
+            // var jqxhr = $.post('http://127.0.0.1:5000/emails', {
+            //     name: name,
+            //     email: email,
+            //     intro: intro,
+            // });
+            // console.log("jqxhr: ", jqxhr)
+
+            // var a = $('#submit');
+            // a.on('click', function(){
+            //     alert("Hello");
+            // });
+        }
+
+        var submit = $('#submit');
+        submit.on('click', function(){
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var intro = $("#message").val();
+            console.log("===========================================================")
+            console.log(name, email, intro)
+
+            var jqxhr = $.post('http://127.0.0.1:5000/emails', {
+                name: name,
+                email: email,
+                intro: intro,
+            });
+            console.log("jqxhr: ", jqxhr)
+        });
+
+    </script>
 </body>
 </html>
