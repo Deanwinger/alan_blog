@@ -1,0 +1,1 @@
+from .decorate_resource import decorate_resource

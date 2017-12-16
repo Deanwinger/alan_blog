@@ -12,10 +12,10 @@ class Email(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('name', type=str, help='name of the sender')
-        parser.add_argument('username', type=str, help='Rate to charge for this resource')
-        parser.add_argument('age', type=int, help='Rate to charge for this resource')
+        parser.add_argument('email', type=str, help='Rate to charge for this resource')
         parser.add_argument('intro', type=str, help='Rate to charge for this resource')
         args = parser.parse_args()
+        print("=======================================================")
         print(args)
         return {'msg': "succeed"}
         
