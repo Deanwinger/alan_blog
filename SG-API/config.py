@@ -11,14 +11,16 @@ class Config:
     MAIL_PORT = 25
     MAIL_USE_TLS = False
     MAIL_USERNAME = 'a541203951@163.com'
-    MAIL_PASSWORD = 'chengyu911017'
+    MAIL_PASSWORD = 'XXX'
     FLASKY_MAIL_SUBJECT_PREFIX = '[Alan]'
     FLASKY_MAIL_SENDER = 'Alan Chen <a541203951@163.com>'
-    FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
+    FLASKY_ADMIN = "a541203951@163.com"
 
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
+    SQLALCHEMY_COMMIT_ON_TEARDOWN = True
+
 
 config = {
     'default': DevelopmentConfig, 

@@ -13,7 +13,6 @@ def make_request_post(data):
 
 if __name__ == "__main__":
     data = {'name': 'Alan chen',
-            'username': 'mishiyouan',
-            'age': 26,
+            'email;': "541203951@163.com",
             'intro': 'heart of a hero',}
-    print(make_request_post(data))
+    make_request_post(data)

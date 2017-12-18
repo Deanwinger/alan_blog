@@ -15,8 +15,8 @@ def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
 
-    mail.init_app(mail)
-    db.init_app(db)
+    mail.init_app(app)
+    # db.init_app(app)
 
     api.init_app(app)
     api.add_resource(resources.Index, '/')
