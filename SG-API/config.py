@@ -11,15 +11,16 @@ class Config:
     MAIL_PORT = 25
     MAIL_USE_TLS = False
     MAIL_USERNAME = 'a541203951@163.com'
-    MAIL_PASSWORD = 'XXX'
+    MAIL_PASSWORD = 'chengyu911017'
     FLASKY_MAIL_SUBJECT_PREFIX = '[Alan]'
     FLASKY_MAIL_SENDER = 'Alan Chen <a541203951@163.com>'
     FLASKY_ADMIN = "a541203951@163.com"
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://lrngsql:xyz@localhost:3306/blog?charset=utf8'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 
 config = {
