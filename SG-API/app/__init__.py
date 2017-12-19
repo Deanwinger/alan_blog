@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 mail = Mail()
-db = SQLAlchemy()
+# db = SQLAlchemy()
 api = Api()
 
 def create_app(config_name):
@@ -18,9 +18,9 @@ def create_app(config_name):
     mail.init_app(app)
     # db.init_app(app)
 
-    api.init_app(app)
     api.add_resource(resources.Index, '/')
     api.add_resource(resources.Email, '/emails')
+    api.init_app(app)
 
     return app
 
