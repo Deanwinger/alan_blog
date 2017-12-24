@@ -18,7 +18,7 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://lrngsql:CCC@localhost:3306/blog?charset=utf8'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://lrngsql:xyz@localhost:3306/blog?charset=utf8'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
